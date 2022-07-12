@@ -2,26 +2,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dice {
-    int dotsValue;
-    int numOfTosses;
+//    int dotsValue;
+//    int dotsValue;
+//    static int tossSum;
+//    List<Integer> tossResultList = new ArrayList<>();
+//    static List<Integer> tossSumResultList = new ArrayList<>();
+//    Dice() {
+//        this.dotsValue = 1;
+//        this.numOfTosses = 1;
+//    }
+    static List<Integer> sumList = new ArrayList<>();
+    static int numOfDie;
 
-    Dice() {
-        this.dotsValue = 1;
-        this.numOfTosses = 1;
+    Dice(int numOfDice) {
+        this.numOfDie = numOfDice;
     }
-    Dice(int numOfTosses) {
-        this.numOfTosses = numOfTosses;
-    }
-
 
     int tossAndSum() {
-        List<Integer> tossResultList = new ArrayList<>();
-        int tossSum =0;
+        int sum = 0;
+//        int temp=0;
+        for (int i = 0; i <numOfDie; i++) {
+//            sum += (int)(Math.random() * 6) + 1;
+            sumList.add((int)(Math.random() *6) +1);
+//            sumList.add(sum);
+//            temp += sumList.get(i);
+//            System.out.println("Dice #"+i + " roll result= " +sumList)
+        }
+//        System.out.println(sumList);
+//        System.out.println(sumList.size());
+        for (int x=0; x<sumList.size(); x+=2) {
+            sum=0;
+            sum+=sumList.get(x);
+            sum+=sumList.get(x+1);
+//            sum+=sumList.indexOf(everyPair+1);
+        }
+//        System.out.println(sumList);
+        return sum;
+    }
+}
+//            System.out.print(sumList);
 
-        //
-        for (int i = 1; i <=numOfTosses; i++) {
-            dotsValue = (int) (Math.random() * 6) + 1;
-            System.out.println("roll " + i + "= " + dotsValue);
+
+/*
+            System.out.println("roll " + i + ": " + dotsValue);
             tossResultList.add(dotsValue);
             System.out.println(tossResultList);
         }
@@ -29,30 +52,24 @@ public class Dice {
             tossSum+=toss;
         }
         System.out.println("sum =" +tossSum);
-
-        return tossSum;
-    }
-
-
-
-
-
-//    =(int)(Math.random()*6) + 1;
+        tossSumResultList.add(tossSum);
+*/
 
 /*
+    =(int)(Math.random()*6) + 1;
+
     Dice(int setValue) {
         value = setValue;
     }
-*/
-//    Dice(int timesToToss) {
-//        return value;
-//    }
-//    int tossAndSum(){
-//        return 0;
-//    }
+    Dice(int timesToToss) {
+        return value;
+    }
+    int tossAndSum(){
+        return 0;
+    }
 
-//    int roll() {
-//        this.rollValue = (int)(Math.random()*6) + 1;
-//        return rollValue;
-//    }
-}
+    int roll() {
+        this.rollValue = (int)(Math.random()*6) + 1;
+        return rollValue;
+    }
+*/
