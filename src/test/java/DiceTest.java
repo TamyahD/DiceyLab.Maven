@@ -14,12 +14,13 @@ public class DiceTest {
     @Test
     public void roll() {
         //Given
-        Dice testDice = new Dice();
+        Dice testDice = new Dice(3);
         //When
-        int rollResult = testDice.roll();
-        int startVal = 1;
-        int endVal = 6;
+        int rollResult = testDice.tossAndSum();
+        int startVal=3;
+        int endVal=18;
         //Then
-        Assert.assertTrue((startVal<=rollResult && rollResult<=endVal)); //roll within 1-6 range
+        System.out.println(rollResult);
+        Assert.assertTrue(startVal<=rollResult && rollResult<=endVal); //roll within 1-6 range
     }
 }
